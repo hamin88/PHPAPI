@@ -11,7 +11,7 @@
 </div>
 
 <script>
-var app = angular.module("myApp", ['ngSanitize']);
+var app = angular.module("myApp");
  var url = 'https://www.nseindia.com/live_market/dynaContent/live_watch/get_quote/getHistoricalData.jsp?symbol=TCS&series=EQ&fromDate=undefined&toDate=undefined&datePeriod=week';
      
 app.controller("myCtrl", function($scope) {
@@ -26,9 +26,6 @@ app.controller("myCtrl", function($scope) {
     
 });
 </script>
-
-<p><b>Note:</b> This example includes the "angular-sanitize.js",
-which has functions for removing potentially dangerous tokens from the HTML.</p>
-
+ 
 </body>
 </html>
