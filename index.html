@@ -12,8 +12,18 @@
 
 <script>
 var app = angular.module("myApp", ['ngSanitize']);
+ var url = 'https://www.nseindia.com/live_market/dynaContent/live_watch/get_quote/getHistoricalData.jsp?symbol=TCS&series=EQ&fromDate=undefined&toDate=undefined&datePeriod=week';
+     
 app.controller("myCtrl", function($scope) {
-    $scope.myText = "My name is: <h1>John Doe</h1>";
+    $scope.myText = "";
+    $http.get(url).
+      success(function(data, status, headers, config) {
+           $scope.myText = data;
+      }).
+      error(function(data, status, headers, config) {
+         $scope.myText = data;
+      });
+    
 });
 </script>
 
